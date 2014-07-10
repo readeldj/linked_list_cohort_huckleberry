@@ -1,0 +1,22 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ansi (1.5.0)
+    builder (3.2.2)
+    hashie (3.4.1)
+    minitest (4.7.3)
+    minitest-reporters (0.14.24)
+      ansi
+      builder
+      minitest (>= 2.12, < 5.0)
+      powerbar
+    powerbar (1.0.12)
+      ansi (~> 1.5.0)
+      hashie (>= 1.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest (= 4.7.3)
+  minitest-reporters
