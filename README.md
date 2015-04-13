@@ -16,6 +16,13 @@ Instructions
     * Once the tests pass, you should refactor and clean up your code
   6. Push your implementation up to github as you work on it.
 
+### Caveats
+
+* Don't use hashes
+* Don't use arrays (except in the bonus exercise on initialize)
+* Only use core Ruby (i.e. No using require)
+*  No copying (from the internet or your peers)
+
 Test Run Modes
 --------------
 
