@@ -19,6 +19,11 @@ class LinkedListItemTest < MiniTest::Unit::TestCase
     assert_equal("foo", lli.payload)
   end
 
+  def test_01b_item_stores_payload
+    lli = LinkedListItem.new("bar")
+    assert_equal("bar", lli.payload)
+  end
+
   def test_02a_add_next_item
     lli1 = LinkedListItem.new("foo")
     lli2 = LinkedListItem.new("bar")
