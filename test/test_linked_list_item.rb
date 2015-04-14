@@ -23,6 +23,8 @@ class LinkedListItemTest < MiniTest::Unit::TestCase
     lli1 = LinkedListItem.new("foo")
     lli2 = LinkedListItem.new("bar")
     lli1.next_item = lli2
+    # changed attr_reader to attr_accessor
+    # added ":next_item" argument to attr_accessor
     assert_equal(lli2, lli1.next_item)
   end
 
