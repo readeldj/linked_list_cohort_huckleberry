@@ -1,5 +1,6 @@
 class LinkedListItem
   include Comparable
+
   #should look into this "comparable"
 
   # def initialize(payload)
