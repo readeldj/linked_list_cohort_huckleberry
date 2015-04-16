@@ -28,8 +28,6 @@ class LinkedListItemTest < MiniTest::Unit::TestCase
     lli1 = LinkedListItem.new("foo")
     lli2 = LinkedListItem.new("bar")
     lli1.next_item = lli2
-    # changed attr_reader to attr_accessor
-    # added ":next_item" argument to attr_accessor
     assert_equal(lli2, lli1.next_item)
   end
 
@@ -42,13 +40,14 @@ class LinkedListItemTest < MiniTest::Unit::TestCase
 
   def test_03a_last_is_true_if_item_is_last
     lli = LinkedListItem.new("foo")
-    assert_equal true, lli.last?
+    assert_equal true, lli.last?  ## def last?
   end
 
   def test_03b_last_is_false_if_item_is_not_last
     lli = LinkedListItem.new("foo")
+    assert_equal true, lli.last?  ## def last?
     lli.next_item = LinkedListItem.new("bar")
-    assert_equal false, lli.last?
+    assert_equal false, lli.last? ## def last?
   end
 
   def test_04a_comparator_greater_than
