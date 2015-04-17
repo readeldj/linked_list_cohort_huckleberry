@@ -3,7 +3,22 @@ require_relative 'linked_list_item'
 class LinkedList
 	def initialize
 		@size = 0
+	end
 
+	def size
+		@size
+	end
+
+	def last
+		if @size == 0
+			@last
+		else
+		    @last = get(@size - 1)
+		end
+	end
+
+	def to_s
+		to_s = "| |"
 	end
 
 	def get(index)
@@ -11,11 +26,11 @@ class LinkedList
 		if index == 0
 			@first_item.payload
 		else
-			current_node = @first_item
+			@current_node = @first_item
 			index.times do
-				current_node = current_node.next_item
+				@current_node = @current_node.next_item
 			end
-			current_node.payload
+			@current_node.payload
 		end
 	end
 
