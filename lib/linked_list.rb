@@ -5,7 +5,9 @@ class LinkedList
 
   def initialize(*args)
     @size = 0
-    @more_stuff = *args
+    args.each do |payload|
+    	self.push(payload)
+    end
   end
 
   def last
@@ -39,6 +41,7 @@ class LinkedList
       @current_node.payload
     end
   end
+  alias [] get
 
   def push(payload)
     new_item = LinkedListItem.new(payload)
