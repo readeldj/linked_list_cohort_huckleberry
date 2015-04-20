@@ -29,19 +29,44 @@ class LinkedList
     str
   end
 
-  def get(index)
-    raise IndexError, "yeah something" if index < 0 || index > @size
+  def get_item(index)
+    raise IndexError if index < 0
     if index == 0
-      @first_item.payload
+      @first_item
     else
-      @current_node = @first_item
+      current_node = @first_item
       index.times do
-        @current_node = @current_node.next_item
+        raise IndexError if current_node.nil? or current_node.last?
+        current_node = current_node.next_item
       end
-      @current_node.payload
+      current_node
     end
   end
+
+  def get(index)
+    get_item(index).payload
+  end
+
   alias [] get
+
+  def []=(index, payload)
+    if index == 0
+      current_item = @first_item
+    else
+      previous_item = get_item(index - 1)
+      current_item = previous_item.next_item
+    end
+
+    new_item = LinkedListItem.new(payload)
+    next_item = current_item.next_item
+    new_item.next_item = next_item
+
+    if index == 0
+      @first_item = new_item
+    else
+      previous_item.next_item = new_item
+    end
+  end
 
   def push(payload)
     new_item = LinkedListItem.new(payload)
