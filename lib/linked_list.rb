@@ -68,6 +68,18 @@ class LinkedList
     end
   end
 
+  def delete(index) # test 13f works without any created "IndexError" statement
+  	if index == 0
+      current_item = get_item(index)
+      @first_item = current_item.next_item
+    else
+	    previous_item = get_item(index - 1)
+	    current_item = get_item(index)
+	    previous_item.next_item = current_item.next_item
+	  end
+	  @size -= 1
+  end
+
   def push(payload)
     new_item = LinkedListItem.new(payload)
     if @first_item.nil?
